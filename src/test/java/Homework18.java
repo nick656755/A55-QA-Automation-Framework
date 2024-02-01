@@ -14,7 +14,7 @@ public class Homework18 extends BaseTest{
         clickSubmit();
         // Step2: click 'Play' and 'Next' btn
         clickPlay();
-        // Step3: check if the song is playing, by checking if 'sound bar icon' is moving
+        // Step3: check if the song is playing, by checking if 'sound bar icon' is moving.
         Assert.assertTrue(isSongPlaying());
     }
     public void  clickPlay() {
@@ -28,3 +28,4 @@ public class Homework18 extends BaseTest{
         return soundBar.isDisplayed();
     }
 }
+//
