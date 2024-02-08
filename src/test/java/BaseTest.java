@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -17,7 +18,7 @@ import java.util.UUID;
 public class BaseTest {
     public WebDriver driver = null;
     public WebDriverWait wait;
-
+    public static Actions actions;
     public String url = "https://qa.koel.app/";
     @BeforeSuite
     void setupClass() {
@@ -35,6 +36,7 @@ public class BaseTest {
         //explicit wait
         wait = new WebDriverWait(driver,Duration.ofSeconds(10));
         driver.manage().window().maximize();
+        actions =new Actions(driver);
     }
     @AfterMethod
     public void closeBrowser() {
