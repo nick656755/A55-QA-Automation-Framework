@@ -8,11 +8,11 @@ import org.openqa.selenium.WebDriver;
 
 public class Homework20 extends BaseTest{
 
-  @Test // Delete a playlist and verify the success mesage
+  @Test // Delete a playlist and verify the success message
   public void deletePlaylist() throws InterruptedException{
     String expectedPlaylistDeletedMsg = "Deleted playlist \"abc.\"";
     //Step1: navigate to koel and login
-    navigateToPage();
+
     provideEmail("nicolai.luta@testpro.io");
     providePassword("tAPO0uuR");
     clickSubmit();

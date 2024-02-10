@@ -8,18 +8,23 @@ import org.testng.annotations.Test;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.interactions.Actions;
 
+import pages.LoginPage;
+
 public class Homework21 extends BaseTest {
 
+
+    private WebElement doubleClick;
+    private Actions inputField;
 
     @Test
     public void renamePlaylist() throws InterruptedException {
         String updatedNameMsg = "Updated playlist \"Test Playlist.\"";
         //Step1: navigate and login to koel
-        navigateToPage();
+
         provideEmail("nicolai.luta@testpro.io");
         providePassword("tAPO0uuR");
         clickSubmit();
-        Thread.sleep(2000);
+        Thread.sleep(5000);
         //Step2: doubleclick on playlist
         doubleClickPlaylist();
         //Step3: rename a playlist
@@ -46,4 +51,13 @@ public class Homework21 extends BaseTest {
         WebElement doubleClick = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[normalize-space()='dance']")));
         actions.doubleClick(doubleClick).perform();
     }
-}
+        
+    }
+    
+    
+
+
+
+
+
+
