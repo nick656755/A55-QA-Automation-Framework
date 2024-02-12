@@ -71,7 +71,7 @@ public class BaseTest {
         WebElement submit =wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[type='submit']")));
         submit.click();
     }
-    public void isAvatarDisplayed() {
+    /*public void isAvatarDisplayed() {
         //WebElement avatarIcon = driver.findElement(By.cssSelector("img[class='avatar']"));
         WebElement avatarIcon = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img[class='avatar']")));
         Assert.assertTrue(avatarIcon.isDisplayed());
@@ -104,5 +104,5 @@ public class BaseTest {
     public void clickAvatarIcon() {
         WebElement avatarIcon = driver.findElement(By.cssSelector("img.avatar"));
         avatarIcon.click();
-    }
+    }*/
 }

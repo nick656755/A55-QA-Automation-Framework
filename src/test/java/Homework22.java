@@ -7,15 +7,14 @@ import org.openqa.selenium.WebElement;
 public class Homework22 extends BaseTest{
 
     @Test
-    public void renamePlaylist() throws InterruptedException {
+    public void renamePlaylist() {
 
-        String updatedNameMsg = "Updated playlist \"Test Playlist.\"";
+        String updatedNameMsg = "Updated playlist \"Test Playlist1.\"";
         LoginPage loginPage = new LoginPage(driver);
         HomePage homePage = new HomePage(driver);
 
         // step1: login to koel
         loginPage.login();
-        Thread.sleep(5000);
         //step2: double click on playlist
         homePage.doubleClickPlaylist();
         //step3: rename a playlist

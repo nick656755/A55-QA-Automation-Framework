@@ -12,27 +12,29 @@ public class HomePage extends BasePage{
         super(givenDriver);
     }
     //Web Elements
-    By userAvatarIcon = By.cssSelector("img.avatar");
-    By inputField = By.cssSelector("[name='name']");
-    By nottnotificationMsg = By.cssSelector("iv.success.show");
+    private By userAvatarIcon = By.cssSelector("img.avatar");
+    private By doubleClickLocator = By.xpath("//a[normalize-space()='pop']");
+
+    private By inputField = By.cssSelector("[name='name']");
+    private By notificationMsg1 = By.cssSelector("div.success.show");
 
     //Helper Methods
     public WebElement getUserAvatar(){
         return findElement(userAvatarIcon);
     }
     public void doubleClickPlaylist() {
-        WebElement doubleClick = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//a[normalize-space()='dance']")));
-        actions.doubleClick(doubleClick).perform();
+        WebElement doubleClickElement = driver.findElement(doubleClickLocator);
+        actions.doubleClick(doubleClickElement).perform();
     }
     public void addNewNameToPlaylist() {
-        WebElement inputField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[name='name']")));
-        inputField.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
-        inputField.sendKeys("Test Playlist");
-        inputField.sendKeys(Keys.ENTER);
+        WebElement inputFieldElement = driver.findElement(inputField);
+        inputFieldElement.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
+        inputFieldElement.sendKeys("Test Playlist1");
+        inputFieldElement.sendKeys(Keys.ENTER);
     }
 
     public String playlistMsg() {
-        WebElement notificationMsg = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("div.success.show")));
+        WebElement notificationMsg = driver.findElement(notificationMsg1);
         return notificationMsg.getText();
     }
 
