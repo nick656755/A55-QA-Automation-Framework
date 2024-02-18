@@ -17,14 +17,13 @@ public class Homework21 extends BaseTest {
     private Actions inputField;
 
     @Test
-    public void renamePlaylist() throws InterruptedException {
+    public void renamePlaylist()  {
         String updatedNameMsg = "Updated playlist \"Test Playlist.\"";
         //Step1: navigate and login to koel
 
         provideEmail("nicolai.luta@testpro.io");
         providePassword("tAPO0uuR");
         clickSubmit();
-        Thread.sleep(5000);
         //Step2: doubleclick on playlist
         doubleClickPlaylist();
         //Step3: rename a playlist
