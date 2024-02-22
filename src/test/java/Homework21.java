@@ -12,7 +12,6 @@ import pages.LoginPage;
 
 public class Homework21 extends BaseTest {
 
-
     private WebElement doubleClick;
     private Actions inputField;
 
@@ -20,7 +19,6 @@ public class Homework21 extends BaseTest {
     public void renamePlaylist()  {
         String updatedNameMsg = "Updated playlist \"Test Playlist.\"";
         //Step1: navigate and login to koel
-
         provideEmail("nicolai.luta@testpro.io");
         providePassword("tAPO0uuR");
         clickSubmit();
@@ -30,8 +28,6 @@ public class Homework21 extends BaseTest {
         addNewNameToPlaylist();
         //Step4: check if we got notification message
         Assert.assertEquals(playlistMsg(), updatedNameMsg);
-
-
     }
 
     public String playlistMsg() {

@@ -9,21 +9,16 @@ import org.openqa.selenium.WebDriver;
 public class Homework20 extends BaseTest{
 
   @Test // Delete a playlist and verify the success message
-  public void deletePlaylist() throws InterruptedException{
+  public void deletePlaylist() {
     String expectedPlaylistDeletedMsg = "Deleted playlist \"abc.\"";
     //Step1: navigate to koel and login
-
     provideEmail("nicolai.luta@testpro.io");
     providePassword("tAPO0uuR");
     clickSubmit();
-
     //Step2: open playlist
     openPlaylist();
-
     //Step3: click delete btn
     clickDeleteBtn();
-
-
     //Step4: check if playlist is deleted
     Assert.assertEquals(getDeletedPlaylistMsg(),expectedPlaylistDeletedMsg,"The playlist deletion message does not match the expected one");
   }
