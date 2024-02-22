@@ -81,6 +81,8 @@ public class BaseTest {
             case "cloud":
                 return lambdaTest();
             default:
+                //WebDriverManager.firefoxdriver().setup();
+                //return driver = new FirefoxDriver();
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--remote-allow-origins=*");

@@ -13,7 +13,7 @@ public class HomePage extends BasePage{
     }
     //Web Elements
     private By userAvatarIcon = By.cssSelector("img.avatar");
-    private By doubleClickLocator = By.xpath("//a[normalize-space()='pop']");
+    private By doubleClickLocator = By.xpath("//a[normalize-space()='rock']");
 
     private By inputField = By.cssSelector("[name='name']");
     private By notificationMsg1 = By.cssSelector("div.success.show");
@@ -29,7 +29,7 @@ public class HomePage extends BasePage{
     public void addNewNameToPlaylist() {
         WebElement inputFieldElement = driver.findElement(inputField);
         inputFieldElement.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
-        inputFieldElement.sendKeys("Test Playlist1");
+        inputFieldElement.sendKeys("Playlist26");
         inputFieldElement.sendKeys(Keys.ENTER);
     }
 
