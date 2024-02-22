@@ -2,9 +2,8 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 import pages.HomePage;
 import pages.LoginPage;
-import org.openqa.selenium.WebElement;
 
-public class Homework22 extends BaseTest{
+public class Homework25 extends BaseTest{
 
     @Test
     public void renamePlaylist() {
