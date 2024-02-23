@@ -7,11 +7,9 @@ public class Homework26 extends BaseTest{
 
     @Test
     public void renamePlaylist() {
-
         String updatedNameMsg = "";
         LoginPage loginPage = new LoginPage(getDriver());
         HomePage homePage = new HomePage(getDriver());
-
         // step1: login to koel
         loginPage.login();
         //step2: double click on playlist
