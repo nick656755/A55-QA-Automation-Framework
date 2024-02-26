@@ -19,7 +19,6 @@ public class Homework25 extends BaseTest{
         //step3: rename a playlist
         homePage.addNewNameToPlaylist();
         //step4: check if we rename the playlist
-
         Assert.assertEquals(homePage.playlistMsg(), updatedNameMsg);
 
     }
