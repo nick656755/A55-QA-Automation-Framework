@@ -6,20 +6,17 @@ import org.testng.annotations.Test;
 public class Homework19 extends BaseTest{
 
   @Test
-    public void deletePlaylist() throws InterruptedException{
+    public void deletePlaylist() {
       String expectedPlaylistDeletedMsg = "Deleted playlist \"test.\"";
       //Step1: navigate to koel and login
       navigateToPage();
       provideEmail("nicolai.luta@testpro.io");
       providePassword("tAPO0uuR");
       clickSubmit();
-
       //Step2: open playlist
       openPlaylist();
-
       //Step3: click delete btn
-    clickDeleteBtn();
-    Thread.sleep(4000);
+      clickDeleteBtn();
 
     //Step4: check if playlist is deleted
     Assert.assertEquals(getDeletedPlaylistMsg(),expectedPlaylistDeletedMsg);
@@ -38,6 +35,4 @@ public class Homework19 extends BaseTest{
     WebElement notificationMsg = driver.findElement(By.cssSelector("div.success.show"));
     return notificationMsg.getText();
     }
-
-
 }
