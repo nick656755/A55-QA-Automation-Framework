@@ -8,7 +8,7 @@ public class Homework26 extends BaseTest{
     @Test
     public void renamePlaylist() {
 
-        String updatedNameMsg = "";
+        String updatedNameMsg = "Updated playlist \"Playlist26.\"";
         LoginPage loginPage = new LoginPage(getDriver());
         HomePage homePage = new HomePage(getDriver());
 
