@@ -27,7 +27,7 @@ public class LoginTests extends BaseTest {
         loginPage.provideEmail("demo31@testpro.io");
         loginPage.providePassword("15sdf56D");
         loginPage.clickSubmit();
-        Assert.assertTrue(homePage.getUserAvatar().isDisplayed());
+        Assert.assertTrue(homePage.isNotVisibleAvatarIcon());
     }
     @Test
     public void loginValidEmailInvalidPassword(){
@@ -37,7 +37,7 @@ public class LoginTests extends BaseTest {
         loginPage.provideEmail("nicolai.luta@testpro.io");
         loginPage.providePassword("InvalidPass12");
         loginPage.clickSubmit();
-        Assert.assertTrue(homePage.getUserAvatar().isDisplayed());
+        Assert.assertTrue(homePage.isNotVisibleAvatarIcon());
 
     }
     @Test
@@ -48,7 +48,7 @@ public class LoginTests extends BaseTest {
         loginPage.provideEmail("abd.12rt@testpro.io");
         loginPage.providePassword("tAPO0uuR");
         loginPage.clickSubmit();
-        Assert.assertTrue(homePage.getUserAvatar().isDisplayed());
+        Assert.assertTrue(homePage.isNotVisibleAvatarIcon());
     }
     @Test
     public void emptyEmailPassword() {
@@ -58,7 +58,7 @@ public class LoginTests extends BaseTest {
         loginPage.provideEmail("");
         loginPage.providePassword("");
         loginPage.clickSubmit();
-        Assert.assertTrue(homePage.getUserAvatar().isDisplayed());
+        Assert.assertTrue(homePage.isNotVisibleAvatarIcon());
     }
 
 }

@@ -1,6 +1,7 @@
 package pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -35,6 +36,15 @@ public class BasePage {
                 .visibilityOfElementLocated(By.cssSelector("[data-testid='sound-bar-play']")));
         return soundBarVisualizer.isDisplayed();
     }
-
+    protected boolean waitForElementToBeNotVisible(WebElement userAvatarIcon) {
+        boolean isWebElementNotVisible = false;
+        try {
+            isWebElementNotVisible = new WebDriverWait(driver, Duration.ofSeconds(2)).
+                    until(ExpectedConditions.invisibilityOf(userAvatarIcon));
+        }catch (TimeoutException e) {
+            isWebElementNotVisible = true;
+        }
+        return isWebElementNotVisible;
+    }
 
 }
