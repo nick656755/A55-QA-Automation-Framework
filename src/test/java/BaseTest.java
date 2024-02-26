@@ -81,8 +81,7 @@ public class BaseTest {
             case "cloud":
                 return lambdaTest();
             default:
-                //WebDriverManager.firefoxdriver().setup();
-                //return driver = new FirefoxDriver();
+
                 WebDriverManager.chromedriver().setup();
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--remote-allow-origins=*");
@@ -120,24 +119,5 @@ public class BaseTest {
             getDriver().get(url);
         }
 
-        public void provideEmail (String email){
-            //WebElement emailField = driver.findElement(By.cssSelector("input[type='email']"));
-            WebElement emailField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[type='email']")));
-            emailField.clear();
-            emailField.sendKeys(email);
-        }
-
-        public void providePassword (String password){
-            //WebElement passwordField = driver.findElement(By.cssSelector("input[type='password']"));
-            WebElement passwordField = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[type='password']")));
-            passwordField.clear();
-            passwordField.sendKeys(password);
-        }
-
-        public void clickSubmit () {
-            //WebElement submit = driver.findElement(By.cssSelector("button[type='submit']"));
-            WebElement submit = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[type='submit']")));
-            submit.click();
-        }
 
     }

@@ -14,10 +14,50 @@ public class LoginTests extends BaseTest {
         LoginPage loginPage = new LoginPage(getDriver());
         HomePage homePage = new HomePage(getDriver());
 
+        loginPage.login();
+        Assert.assertTrue(homePage.getUserAvatar().isDisplayed());
+    }
+
+    //Negative test cases for login page
+    @Test
+    public void loginInvalidEmailPassword(){
+        LoginPage loginPage = new LoginPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
+
+        loginPage.provideEmail("demo31@testpro.io");
+        loginPage.providePassword("15sdf56D");
+        loginPage.clickSubmit();
+        Assert.assertTrue(homePage.getUserAvatar().isDisplayed());
+    }
+    @Test
+    public void loginValidEmailInvalidPassword(){
+        LoginPage loginPage = new LoginPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
+
         loginPage.provideEmail("nicolai.luta@testpro.io");
+        loginPage.providePassword("InvalidPass12");
+        loginPage.clickSubmit();
+        Assert.assertTrue(homePage.getUserAvatar().isDisplayed());
+
+    }
+    @Test
+    public void loginInvalidEmailValidPassword() {
+        LoginPage loginPage = new LoginPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
+
+        loginPage.provideEmail("abd.12rt@testpro.io");
         loginPage.providePassword("tAPO0uuR");
         loginPage.clickSubmit();
+        Assert.assertTrue(homePage.getUserAvatar().isDisplayed());
+    }
+    @Test
+    public void emptyEmailPassword() {
+        LoginPage loginPage = new LoginPage(getDriver());
+        HomePage homePage = new HomePage(getDriver());
 
+        loginPage.provideEmail("");
+        loginPage.providePassword("");
+        loginPage.clickSubmit();
         Assert.assertTrue(homePage.getUserAvatar().isDisplayed());
     }
 

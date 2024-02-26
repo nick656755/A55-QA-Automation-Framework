@@ -8,7 +8,10 @@
         <classes>
             <class name="LoginTests"/>
             <class name="BaseTest"/>
-            <class name="Homework26"/>
+            <class name="HomeTest"/>
+            <class name="AllSongsTest"/>
+            <class name="CucumberRunner"/>
+
 
         </classes>
     </test>
