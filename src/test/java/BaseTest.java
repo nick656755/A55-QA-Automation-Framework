@@ -71,38 +71,5 @@ public class BaseTest {
         WebElement submit =wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button[type='submit']")));
         submit.click();
     }
-    /*public void isAvatarDisplayed() {
-        //WebElement avatarIcon = driver.findElement(By.cssSelector("img[class='avatar']"));
-        WebElement avatarIcon = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("img[class='avatar']")));
-        Assert.assertTrue(avatarIcon.isDisplayed());
-    }
 
-    public void clickSaveButton() {
-        //WebElement saveButton = driver.findElement(By.cssSelector("button.btn-submit"));
-        WebElement saveButton = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("button.btn-submit")));
-        saveButton.click();
-    }
-
-    public void provideProfileName(String randomName) {
-       // WebElement profileName = driver.findElement(By.cssSelector("[name='name']"));
-        WebElement profileName = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[name='name']")));
-        profileName.clear();
-        profileName.sendKeys(randomName);
-    }
-
-    public void provideCurrentPassword(String password) {
-        //WebElement currentPassword = driver.findElement(By.cssSelector("[name='current_password']"));
-        WebElement currentPassword = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("[name='current_password']")));
-        currentPassword.clear();
-        currentPassword.sendKeys(password);
-    }
-
-    public String generateRandomName() {
-        return UUID.randomUUID().toString().replace("-", "");
-    }
-
-    public void clickAvatarIcon() {
-        WebElement avatarIcon = driver.findElement(By.cssSelector("img.avatar"));
-        avatarIcon.click();
-    }*/
 }

@@ -21,18 +21,15 @@ public class LoginPage extends BasePage{
     @FindBy(css = "[type='submit']")
     private WebElement loginBtn;
 
-
     //Helper Methods
     public LoginPage provideEmail (String email){
       emailField.sendKeys(email);
       return this;
     }
-
     public LoginPage providePassword (String password){
         passwordField.sendKeys(password);
         return this;
     }
-
     public LoginPage clickSubmit(){
         loginBtn.click();
         return this;

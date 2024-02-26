@@ -12,22 +12,16 @@ public class HomePage extends BasePage{
     public HomePage(WebDriver givenDriver) {
         super(givenDriver);
     }
-
     //Web Elements using Page Factory
 
     @FindBy(css = "img.avatar")
     private WebElement userAvatarIcon;
-    //private By userAvatarIcon = By.cssSelector("img.avatar");
     @FindBy(xpath ="//a[normalize-space()='dance']" )
     private WebElement doubleClickLocator;
-    //private  By doubleClickLocator = By.xpath("//a[normalize-space()='dance']");
     @FindBy(css = "[name='name']")
     private WebElement playlistNameField;
-    //private By playlistNameField = By.cssSelector("[name='name']");
     @FindBy(css = "div.success.show")
     private WebElement nottnotificationMsg;
-    //private By nottnotificationMsg = By.cssSelector("div.success.show");
-
 
 
     //Helper Methods
@@ -38,7 +32,6 @@ public class HomePage extends BasePage{
         actions.doubleClick((doubleClickLocator)).perform();
         return this;
     }
-
     public HomePage addNewNameToPlaylist() {
         playlistNameField.sendKeys(Keys.chord(Keys.CONTROL, "A", Keys.BACK_SPACE));
         playlistNameField.sendKeys("Test Playlist");
